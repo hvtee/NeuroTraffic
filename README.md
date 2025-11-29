@@ -1,2 +1,56 @@
-# NeuroTraffic
-A CV powered application to detect cars and tune light switching timings on crossroads using real time footage from CCTV's
+# Интеллектуальная система адаптивного управления светофорами на основе анализа трафика — NeuroTraffic
+
+> **NeuroTraffic — приложение на основе компьютерного зрения, 
+> которое определяет автомобили на перекрёстках с помощью камер 
+> видеонаблюдения в реальном времени и динамически регулирует 
+> длительность работы светофоров для повышения пропускной способности 
+> дорог и снижения заторов.**
+
+
+
+[![GitHub](https://img.shields.io/github/license/hvtee/NeuroTraffic)](https://github.com/hvtee/NeuroTraffic/blob/main/LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Ultralytics YOLOv8](https://img.shields.io/badge/Ultralytics-YOLOv8-green)](https://docs.ultralytics.com/)
+
+---
+
+## Цель проекта
+
+**NeuroTraffic** — это система компьютерного зрения (CV), 
+которая анализирует поток автомобилей в реальном времени 
+с камер видеонаблюдения и **динамически корректирует длительность 
+работы светофоров** на перекрёстках. Это позволяет:
+
+- Снизить заторы и пробки  
+- Увеличить пропускную способность дорог  
+- Оптимизировать время ожидания для водителей и пешеходов  
+- Автоматизировать управление светофорами без участия человека
+
+---
+
+## Как это работает
+
+1. **Обнаружение объектов**: Используется нейросеть YOLOv8 для детекции автомобилей, грузовиков, автобусов и других транспортных средств.
+2. **Анализ трафика**: Система определяет:
+   - Количество машин в каждом направлении
+   - Направление движения
+   - Тип транспорта (легковой, грузовой, общественный)
+   - Плотность потока
+3. **Адаптивное управление**: На основе данных алгоритм рассчитывает оптимальные временные интервалы для каждого светофора и отправляет команды на изменение фаз.
+
+---
+
+
+## Установка и запуск
+
+```bash
+git clone https://github.com/hvtee/NeuroTraffic.git
+cd NeuroTraffic
+python -m venv .venv
+source .venv/bin/activate  # Linux/Mac
+# или
+.venv\Scripts\activate     # Windows
+
+pip install -r requirements.txt
+
+python check_model/main.py
