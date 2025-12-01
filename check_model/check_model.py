@@ -2,8 +2,8 @@ from ultralytics import YOLO
 
 
 def check_model():
-    path_to_model = 'check_model/models/NeuroTrafficV1.pt'
-    path_to_test_img = 'check_model/check_img/test_img_1.jpg'
+    path_to_model = 'models/NeuroTrafficV2.pt'
+    path_to_test_img = 'check_img/test_img_2.png'
     path_to_output = "check_model/output"
 
     try:
